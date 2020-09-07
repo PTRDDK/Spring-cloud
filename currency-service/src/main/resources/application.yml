@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: currency-service
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    template:
+      default-topic: test.topic
+    producer:
+      key-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  port: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
